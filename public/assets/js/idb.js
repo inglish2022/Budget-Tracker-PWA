@@ -26,7 +26,7 @@ request.onerror = function(event) {
   console.log(event.target.errorCode);
 };
 
-function saveRecord(record) {
+function checkDatabase() {
   // open a new transaction with the database with read and write permissions 
   const transaction = db.transaction("pending", "readwrite");
 
@@ -34,7 +34,7 @@ function saveRecord(record) {
   const store = transaction.objectStore("pending");
 
   // add record to your store with add method
-  store.add(record);
+  // store.add(record);
 
   const getAll = store.getAll();
 
